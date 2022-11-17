@@ -5,7 +5,7 @@ let tvshows = [
         id: 1,
         title: "Black Clover",
         category: "Action/Adventure/Comedy/Fantasy",
-        summary: "Astra and Yuno were abandoned at the same church on the same day. Raised together as children, they came to know of the ""Wizard King"" tixtle given to the strongest mage in the kingdom. However, as they grew up, a stark difference between them became evident. While Yuno is able to wield magic with amazing power and control, Asta cannot use magic at all.",
+        summary: "Astra and Yuno were abandoned at the same church on the same day. Raised together as children, they came to know of the Wizard King tixtle given to the strongest mage in the kingdom. However, as they grew up, a stark difference between them became evident. While Yuno is able to wield magic with amazing power and control, Asta cannot use magic at all.",
         thiller: '<iframe width="560" height="315" src="https://www.youtube.com/embed/MH4pWlX4LqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
         year: "2023",
         movie_cover: "images/tvshow/tvshow_bc.jpg",
@@ -91,7 +91,7 @@ let tvshows = [
     //     movie_cover: "images/tvshow/tvshow_sexed.jpg",
     //     mylist: false,
     // },
-    // {
+    // {cd
     //     id: 10,
     //     title: "Suits",
     //     category: "Legal Drama",
