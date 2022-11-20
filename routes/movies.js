@@ -152,25 +152,29 @@ let movies = [
         year: "2014",
         movie_cover: "images/movies/movie_thefaultinourstars.jpg",
         mylist: false,
-    },
+    }
 ];
-
-// let movies = [
-//     {
-//         id: 1,
-//         title: "Red Notice",
-//         category: "Action/Comedy",
-//         summary: "Red Notice is a 2021 American action comedy film written and directed by Rawson Marshall Thurber starring Dwayne Johnson alongside Ryan Reynolds and Gal Gadot and Ritu Arya. It marks the third collaboration between Thurber and Johnson, following Central Intelligence (2016) and Skyscraper (2018).",
-//         thiller: "<iframe width='560' height='315' src='https://www.youtube.com/embed/Pj0wz7zu3Ms' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
-//         year: "2021",
-//         movie_cover: "images/movies/movie_rednotice.jpg",
-//         mylist: false,
-//     },
-// ]
 
 
 router.get('/', function(req, res, next) {
     res.send(movies);
+});
+
+router.get("/movie/:id", (req, res) => {
+    const { id } = req.params;
+    let movie = movies.find((item) => {
+        return item.id === Number(id);
+    });
+    res.status(200).send(movie ? movie : {status: "Record not found!"});
+});
+
+router.put("/movie/:id", (req, res)=>{
+    const { id } = req.params;
+    let movie = movies.find((item) => {
+        return item.id === Number(id);
+    });
+    movie.mylist = req.body.mylist;
+    res.status(200).send( movie );
 });
 
 module.exports = router;
