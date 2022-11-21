@@ -168,6 +168,14 @@ router.get("/movie/:id", (req, res) => {
     res.status(200).send(movie ? movie : {status: "Record not found!"});
 });
 
+router.get("/movie_mylist/:mylist", (req, res) => {
+    const { mylist } = req.params;
+    let movie = movies.filter((item) => {
+        return item.mylist.toString() === mylist;
+    });
+    res.status(200).send(movie);
+});
+
 router.put("/movie/:id", (req, res)=>{
     const { id } = req.params;
     let movie = movies.find((item) => {

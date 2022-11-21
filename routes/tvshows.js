@@ -127,6 +127,14 @@ router.get("/tvshow/:id", (req, res) => {
     res.status(200).send(tvshow ? tvshow : {status: "Record not found!"});
 });
 
+router.get("/tvshow_list/:mylist", (req, res) => {
+    const { mylist } = req.params;
+    let tvshow = tvshows.filter((item) => {
+        return item.mylist.toString() === mylist;
+    });
+    res.status(200).send(tvshow);
+});
+
 router.put("/tvshow/:id", (req, res)=>{
     const { id } = req.params;
     let tvshow = tvshows.find((item) => {
